@@ -1,0 +1,23 @@
+CREATE TABLE TodoPoints (
+    ID int,
+    Todopoint varchar(500)
+);
+
+alter table todopoints add column todolist_id int;
+
+create table TodoPoints(
+   id INT NOT NULL AUTO_INCREMENT,
+   todolist_id int,
+   Todopoint VARCHAR(500) NOT NULL,
+   PRIMARY KEY (id ),
+   FOREIGN KEY (todolist_id) REFERENCES TodoList(id)
+
+);
+
+
+ALTER TABLE Todopoints
+ADD CONSTRAINT FK_todolist_id
+FOREIGN KEY (todolist_id) REFERENCES TodoList(id);
+
+INSERT into TODOPOINTS (todopoint,todolist_id_id)
+values("Hello India",17),("Hello Mohan",17);
